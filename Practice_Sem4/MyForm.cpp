@@ -10,3 +10,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     return 0;
 }
 
+int main(array<String^>^ args)
+{
+
+
+    Application::SetCompatibleTextRenderingDefault(false);
+    Application::EnableVisualStyles();
+    PracticeSem4::MyForm form;
+    Application::Run(% form);
+}
