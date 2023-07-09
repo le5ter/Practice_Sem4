@@ -1,6 +1,8 @@
 #pragma once
 #include <fstream>
 #include <string>
+#include "MyForm1.h"
+#include "Student.h"
 
 namespace PracticeSem4 {
 
@@ -58,12 +60,14 @@ namespace PracticeSem4 {
 	private: System::Windows::Forms::ComboBox^ comboBox3;
 	private: System::Windows::Forms::ComboBox^ comboBox4;
 	private: System::Windows::Forms::ComboBox^ comboBox5;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 
 
@@ -93,24 +97,8 @@ namespace PracticeSem4 {
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(51, 48);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(249, 20);
-			this->textBox1->TabIndex = 0;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(51, 187);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(163, 60);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"Отправить";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -135,17 +123,10 @@ namespace PracticeSem4 {
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Фамилия";
 			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(51, 101);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(249, 20);
-			this->textBox2->TabIndex = 5;
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(548, 32);
+			this->label3->Location = System::Drawing::Point(571, 32);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(45, 13);
 			this->label3->TabIndex = 6;
@@ -154,70 +135,25 @@ namespace PracticeSem4 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(405, 66);
+			this->label4->Location = System::Drawing::Point(428, 66);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(13, 13);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"1";
 			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
-			this->comboBox1->Location = System::Drawing::Point(392, 100);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(37, 21);
-			this->comboBox1->TabIndex = 8;
-			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(492, 66);
+			this->label5->Location = System::Drawing::Point(515, 66);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(13, 13);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"2";
 			// 
-			// comboBox2
-			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
-			this->comboBox2->Location = System::Drawing::Point(481, 101);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(37, 21);
-			this->comboBox2->TabIndex = 10;
-			// 
-			// comboBox3
-			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
-			this->comboBox3->Location = System::Drawing::Point(556, 100);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(37, 21);
-			this->comboBox3->TabIndex = 11;
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
-			this->comboBox4->Location = System::Drawing::Point(642, 101);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(37, 21);
-			this->comboBox4->TabIndex = 12;
-			// 
-			// comboBox5
-			// 
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
-			this->comboBox5->Location = System::Drawing::Point(724, 101);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(37, 21);
-			this->comboBox5->TabIndex = 13;
-			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(566, 66);
+			this->label6->Location = System::Drawing::Point(589, 66);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(13, 13);
 			this->label6->TabIndex = 14;
@@ -226,7 +162,7 @@ namespace PracticeSem4 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(652, 66);
+			this->label7->Location = System::Drawing::Point(675, 66);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(13, 13);
 			this->label7->TabIndex = 15;
@@ -235,7 +171,7 @@ namespace PracticeSem4 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(736, 66);
+			this->label8->Location = System::Drawing::Point(759, 66);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(13, 13);
 			this->label8->TabIndex = 15;
@@ -251,11 +187,91 @@ namespace PracticeSem4 {
 			this->label9->Text = L"Ошибки";
 			this->label9->Visible = false;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(51, 48);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(249, 20);
+			this->textBox1->TabIndex = 0;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(51, 101);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(249, 20);
+			this->textBox2->TabIndex = 5;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(51, 187);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(163, 60);
+			this->button1->TabIndex = 1;
+			this->button1->Text = L"Отправить";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
+			this->comboBox1->Location = System::Drawing::Point(415, 100);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(37, 21);
+			this->comboBox1->TabIndex = 8;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
+			this->comboBox2->Location = System::Drawing::Point(504, 101);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(37, 21);
+			this->comboBox2->TabIndex = 10;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
+			this->comboBox3->Location = System::Drawing::Point(579, 100);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(37, 21);
+			this->comboBox3->TabIndex = 11;
+			// 
+			// comboBox4
+			// 
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
+			this->comboBox4->Location = System::Drawing::Point(665, 101);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(37, 21);
+			this->comboBox4->TabIndex = 12;
+			// 
+			// comboBox5
+			// 
+			this->comboBox5->FormattingEnabled = true;
+			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"2", L"3", L"4", L"5" });
+			this->comboBox5->Location = System::Drawing::Point(747, 101);
+			this->comboBox5->Name = L"comboBox5";
+			this->comboBox5->Size = System::Drawing::Size(37, 21);
+			this->comboBox5->TabIndex = 13;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(678, 415);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 17;
+			this->button2->Text = L"Динамический список";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(870, 489);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
@@ -300,6 +316,11 @@ namespace PracticeSem4 {
 			label9->Text = "Введите все поля оценок";
 			label9->BackColor = Color::Red;
 		}
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		MyForm1^ form1 = gcnew MyForm1();
+		form1->Show();
 	}
 };
 }
