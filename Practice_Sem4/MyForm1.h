@@ -3,6 +3,8 @@
 #include <msclr\marshal_cppstd.h>
 #include <list>
 #include "Student.h"
+#include <functional>
+#include <iostream>
 
 namespace PracticeSem4 
 {
@@ -17,25 +19,14 @@ namespace PracticeSem4
 	/// <summary>
 	/// Сводка для MyForm1
 	/// </summary>
+
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
 	public:
+		
 		MyForm1(void)
 		{
 			InitializeComponent();
-			std::list<Student> students;
-			StreamReader^ sr = gcnew StreamReader("Data.txt");
-			String^ line;
-			std::string newline, name, lastname;
-			int marks[5];
-			while ((line = sr->ReadLine()) != nullptr)
-			{
-				newline = msclr::interop::marshal_as<std::string>(line);
-				std::stringstream ss(newline);
-				ss >> name >> lastname >> marks[0] >> marks[1] >> marks[2] >> marks[3] >> marks[4];
-				Student stud = Student(name, lastname, marks);
-				students.push_back(stud);
-			}
 		}
 
 	protected:
@@ -50,6 +41,7 @@ namespace PracticeSem4
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::ListBox^ listBox1;
 	protected:
 
 	private:
@@ -66,6 +58,7 @@ namespace PracticeSem4
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -78,11 +71,20 @@ namespace PracticeSem4
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Location = System::Drawing::Point(62, 52);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(649, 303);
+			this->listBox1->TabIndex = 1;
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(788, 533);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm1";
 			this->Text = L"MyForm1";
@@ -93,7 +95,28 @@ namespace PracticeSem4
 #pragma endregion
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
+		std::list<Student> students;
+		StreamReader^ sr = gcnew StreamReader("Data.txt");
+		String^ line;
+		std::string newline, name, lastname;
+		int marks[5];
+		while ((line = sr->ReadLine()) != nullptr)
+		{
+			newline = msclr::interop::marshal_as<std::string>(line);
+			std::stringstream ss(newline);
+			ss >> name >> lastname >> marks[0] >> marks[1] >> marks[2] >> marks[3] >> marks[4];
+			Student stud = Student(name, lastname, marks);
+			students.push_back(stud);
+		}
+		students.sort(Student::f1);
 
+		this->listBox1->Items->Clear();
+		for (auto it = students.begin(); it != students.end(); it++)
+		{
+			std::string str = it->Get_lastname() + " " + std::to_string(it->Get_avarage());
+			String^ str1 = gcnew String(str.c_str());
+			listBox1->Items->Add(str1);
+		}
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
 	{

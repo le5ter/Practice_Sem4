@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include "MyForm1.h"
-#include "Student.h"
 
 namespace PracticeSem4 {
 
@@ -13,7 +12,7 @@ namespace PracticeSem4 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
-
+	
 
 	/// <summary>
 	/// Сводка для MyForm
@@ -258,9 +257,9 @@ namespace PracticeSem4 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(678, 415);
+			this->button2->Location = System::Drawing::Point(284, 278);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(192, 46);
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"Динамический список";
 			this->button2->UseVisualStyleBackColor = true;

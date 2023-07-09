@@ -9,6 +9,12 @@ Student::Student(std::string name, std::string lastname, int marks[5])
     this->Set_mark(marks[2], 2);
     this->Set_mark(marks[3], 3);
     this->Set_mark(marks[4], 4);
+    double res = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        res += marks[i];
+    }
+    this->avg_marks = (double) res / 5;
 }
 
 std::string Student::Get_name()
@@ -39,4 +45,22 @@ void Student::Set_lastname(std::string lastname)
 void Student::Set_mark(int mark, int index)
 {
     this->marks[index] = mark;
+}
+
+int Student::Count_bad_marks()
+{
+    int res = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        if (marks[i] == 2)
+        {
+            res += 1;
+        }
+    }
+    return res;
+}
+
+double Student::Get_avarage()
+{
+    return avg_marks;
 }
