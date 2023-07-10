@@ -1,5 +1,16 @@
 #include "Student.h"
 
+Student::Student()
+{
+    *this->name = "";
+    *this->lastname = "";
+    this->avg_marks = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        marks[i] = 0;
+    }
+}
+
 Student::Student(std::string name, std::string lastname, int marks[5])
 {
     this->Set_name(name);
@@ -63,4 +74,14 @@ int Student::Count_bad_marks()
 double Student::Get_avarage()
 {
     return avg_marks;
+}
+
+int Student::Marks_sum()
+{
+    int res = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        res += marks[i];
+    }
+    return res;
 }

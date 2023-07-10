@@ -11,7 +11,6 @@ private:
 
 public:
 	Student();
-	Student(std::string name, std::string lastname);
 	Student(std::string name, std::string lastname, int marks[5]);
 	static bool f1(Student stud1, Student stud2)
 	{
@@ -29,6 +28,6 @@ public:
 	void Set_mark(int mark, int index);
 	int Count_bad_marks();
 	double Get_avarage();
-
+	int Marks_sum();
 };
 

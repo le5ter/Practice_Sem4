@@ -3,6 +3,7 @@
 #include <string>
 #include "MyForm1.h"
 #include "MyForm2.h"
+#include "MyForm3.h"
 
 namespace PracticeSem4 {
 
@@ -62,6 +63,7 @@ namespace PracticeSem4 {
 	private: System::Windows::Forms::ComboBox^ comboBox5;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -100,6 +102,7 @@ namespace PracticeSem4 {
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// contextMenuStrip1
@@ -278,11 +281,22 @@ namespace PracticeSem4 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(282, 295);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(192, 48);
+			this->button4->TabIndex = 19;
+			this->button4->Text = L"Бинарное дерево";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(870, 489);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label9);
@@ -340,6 +354,11 @@ namespace PracticeSem4 {
 	{
 		MyForm2^ form2 = gcnew MyForm2();
 		form2->Show();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		MyForm3^ form3 = gcnew MyForm3();
+		form3->Show();
 	}
 };
 }
