@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "MyForm1.h"
+#include "MyForm2.h"
 
 namespace PracticeSem4 {
 
@@ -60,6 +61,7 @@ namespace PracticeSem4 {
 	private: System::Windows::Forms::ComboBox^ comboBox4;
 	private: System::Windows::Forms::ComboBox^ comboBox5;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -97,6 +99,7 @@ namespace PracticeSem4 {
 			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// contextMenuStrip1
@@ -257,7 +260,7 @@ namespace PracticeSem4 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(284, 278);
+			this->button2->Location = System::Drawing::Point(282, 232);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(192, 46);
 			this->button2->TabIndex = 17;
@@ -265,11 +268,22 @@ namespace PracticeSem4 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(518, 232);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(211, 46);
+			this->button3->TabIndex = 18;
+			this->button3->Text = L"Динамический список2";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(870, 489);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
@@ -296,7 +310,8 @@ namespace PracticeSem4 {
 		}
 #pragma endregion
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
 		if (comboBox1->SelectedIndex != -1 && comboBox2->SelectedIndex != -1 && comboBox3->SelectedIndex != -1
 			&& comboBox4->SelectedIndex != -1 && comboBox5->SelectedIndex != -1)
 		{
@@ -320,6 +335,11 @@ namespace PracticeSem4 {
 	{
 		MyForm1^ form1 = gcnew MyForm1();
 		form1->Show();
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		MyForm2^ form2 = gcnew MyForm2();
+		form2->Show();
 	}
 };
 }

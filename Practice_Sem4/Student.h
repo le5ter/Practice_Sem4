@@ -17,6 +17,10 @@ public:
 	{
 		return stud1.Count_bad_marks() > stud2.Count_bad_marks();
 	};
+	static bool f2(Student stud1, Student stud2)
+	{
+		return stud1.Get_avarage() < stud2.Get_avarage();
+	};
 	std::string Get_name();
 	std::string Get_lastname();
 	int Get_mark(int index);

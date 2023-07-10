@@ -6,8 +6,8 @@
 #include <functional>
 #include <iostream>
 
-namespace PracticeSem4 
-{
+namespace PracticeSem4 {
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -17,23 +17,24 @@ namespace PracticeSem4
 	using namespace System::IO;
 
 	/// <summary>
-	/// Сводка для MyForm1
+	/// Сводка для MyForm2
 	/// </summary>
-
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class MyForm2 : public System::Windows::Forms::Form
 	{
 	public:
-		
-		MyForm1(void)
+		MyForm2(void)
 		{
 			InitializeComponent();
+			//
+			//TODO: добавьте код конструктора
+			//
 		}
 
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
-		~MyForm1()
+		~MyForm2()
 		{
 			if (components)
 			{
@@ -63,37 +64,37 @@ namespace PracticeSem4
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(272, 428);
+			this->button1->Location = System::Drawing::Point(277, 428);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(232, 93);
+			this->button1->Size = System::Drawing::Size(208, 83);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Закрыть";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
 			// 
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(62, 52);
+			this->listBox1->Location = System::Drawing::Point(58, 25);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(649, 303);
+			this->listBox1->Size = System::Drawing::Size(623, 355);
 			this->listBox1->TabIndex = 1;
 			// 
-			// MyForm1
+			// MyForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(788, 533);
+			this->ClientSize = System::Drawing::Size(777, 536);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button1);
-			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
-			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
+			this->Name = L"MyForm2";
+			this->Text = L"MyForm2";
+			this->Load += gcnew System::EventHandler(this, &MyForm2::MyForm2_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
 		std::list<Student> students;
 		StreamReader^ sr = gcnew StreamReader("Data.txt");
@@ -124,5 +125,5 @@ namespace PracticeSem4
 	{
 		this->Close();
 	}
-	};
+};
 }
