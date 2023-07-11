@@ -4,6 +4,7 @@
 #include "MyForm1.h"
 #include "MyForm2.h"
 #include "MyForm3.h"
+#include "MyForm4.h"
 
 namespace PracticeSem4 {
 
@@ -64,6 +65,7 @@ namespace PracticeSem4 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -103,6 +105,7 @@ namespace PracticeSem4 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// contextMenuStrip1
@@ -293,11 +296,22 @@ namespace PracticeSem4 {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(518, 295);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(211, 47);
+			this->button5->TabIndex = 20;
+			this->button5->Text = L"Лучшие студенты";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(870, 489);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -361,6 +375,12 @@ namespace PracticeSem4 {
 	{
 		MyForm3^ form3 = gcnew MyForm3();
 		form3->Show();
+	}
+
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		MyForm4^ form4 = gcnew MyForm4();
+		form4->Show();
 	}
 };
 }
