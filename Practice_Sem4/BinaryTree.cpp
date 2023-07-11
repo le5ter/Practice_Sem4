@@ -30,7 +30,8 @@ void BinaryTree::Insert(BinaryTreeNode& root, Student student)
 		{
 			if (root->student.Marks_sum() > student.Marks_sum())
 				Insert(root->left, student);
-			else Insert(root->right, student);
+			else 
+				Insert(root->right, student);
 		}
 	}
 }

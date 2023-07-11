@@ -195,6 +195,7 @@ namespace PracticeSem4 {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(51, 48);
+			this->textBox1->MaxLength = 20;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(249, 20);
 			this->textBox1->TabIndex = 0;
@@ -202,6 +203,7 @@ namespace PracticeSem4 {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(51, 101);
+			this->textBox2->MaxLength = 20;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(249, 20);
 			this->textBox2->TabIndex = 5;

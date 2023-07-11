@@ -16,8 +16,8 @@ public:
 	~BinaryTree();
 	void Insert(Student student);
 	void Destroy_tree();
-private:
 	BinaryTreeNode root;
+private:
 	void Insert(BinaryTreeNode& root, Student student);
 	void Destroy_tree(BinaryTreeNode root);
 };
