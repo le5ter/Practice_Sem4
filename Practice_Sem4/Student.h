@@ -30,6 +30,7 @@ public:
 	void Set_name(std::string name);
 	void Set_lastname(std::string lastname);
 	void Set_mark(int mark, int index);
+	void Set_avarage(double avg);
 	int Count_bad_marks();
 	double Get_avarage();
 	int Marks_sum();

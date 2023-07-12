@@ -58,6 +58,11 @@ void Student::Set_mark(int mark, int index)
     this->marks[index] = mark;
 }
 
+void Student::Set_avarage(double avg)
+{
+    this->avg_marks = avg;
+}
+
 int Student::Count_bad_marks()
 {
     int res = 0;
