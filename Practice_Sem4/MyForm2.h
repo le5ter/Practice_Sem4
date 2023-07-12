@@ -115,7 +115,7 @@ namespace PracticeSem4 {
 		this->listBox1->Items->Clear();
 		for (auto it = students.begin(); it != students.end(); it++)
 		{
-			std::string str = it->Get_lastname() + " " + std::to_string(it->Get_avarage());
+			std::string str = it->Get_lastname() + " " + it->Get_str_avarage();
 			String^ str1 = gcnew String(str.c_str());
 			listBox1->Items->Add(str1);
 		}

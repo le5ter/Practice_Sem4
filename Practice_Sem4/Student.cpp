@@ -1,10 +1,13 @@
 #include "Student.h"
+#include <math.h>
+#include <iostream>
 
 Student::Student()
 {
     *this->name = "";
     *this->lastname = "";
     this->avg_marks = 0;
+    this->str_avg_marks = "";
     for (int i = 0; i < 5; i++)
     {
         marks[i] = 0;
@@ -25,7 +28,9 @@ Student::Student(std::string name, std::string lastname, int marks[5])
     {
         res += marks[i];
     }
-    this->avg_marks = (double) res / 5;
+    avg_marks = res / 5;
+    str_avg_marks = precision_2(avg_marks);
+
 }
 
 std::string Student::Get_name()
@@ -36,6 +41,11 @@ std::string Student::Get_name()
 std::string Student::Get_lastname()
 {
     return *this->lastname;
+}
+
+std::string Student::Get_str_avarage()
+{
+    return this->str_avg_marks;
 }
 
 int Student::Get_mark(int index)

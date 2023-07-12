@@ -8,6 +8,7 @@ private:
 	std::string lastname[20];
 	int marks[5];
 	double avg_marks;
+	std::string str_avg_marks;
 
 public:
 	Student();
@@ -26,6 +27,7 @@ public:
 	};
 	std::string Get_name();
 	std::string Get_lastname();
+	std::string Get_str_avarage();
 	int Get_mark(int index);
 	void Set_name(std::string name);
 	void Set_lastname(std::string lastname);
@@ -34,5 +36,11 @@ public:
 	int Count_bad_marks();
 	double Get_avarage();
 	int Marks_sum();
+	std::string precision_2(float number)
+	{
+		int decimal_part = (number * 10) - ((int)number * 10);
+		return std::to_string((int)number) + "." + std::to_string(decimal_part);
+	}
+
 };
 

@@ -158,21 +158,21 @@ namespace PracticeSem4 {
 		if (root->root)
 		{
 			String^ lastname = gcnew String(root->root->student.Get_lastname().c_str());
-			String^ avg = gcnew String(std::to_string(root->root->student.Get_avarage()).c_str());
+			String^ avg = gcnew String(root->root->student.Get_str_avarage().c_str());
 			formGraph->DrawString(lastname, font1, Brushes::Black, 590, 45, format1);
 			formGraph->DrawString(avg, font1, Brushes::Black, 590, 75, format1);
 
 			if (root->root->left)
 			{
 				String^ lastname = gcnew String(root->root->left->student.Get_lastname().c_str());
-				String^ avg = gcnew String(std::to_string(root->root->left->student.Get_avarage()).c_str());
+				String^ avg = gcnew String(root->root->left->student.Get_str_avarage().c_str());
 				formGraph->DrawString(lastname, font1, Brushes::Black, 280, 215, format1);
 				formGraph->DrawString(avg, font1, Brushes::Black, 280, 245, format1);
 
 				if (root->root->left->left)
 				{
 					String^ lastname = gcnew String(root->root->left->left->student.Get_lastname().c_str());
-					String^ avg = gcnew String(std::to_string(root->root->left->left->student.Get_avarage()).c_str());
+					String^ avg = gcnew String(root->root->left->left->student.Get_str_avarage().c_str());
 					formGraph->DrawString(lastname, font1, Brushes::Black, 135, 375, format1);
 					formGraph->DrawString(avg, font1, Brushes::Black, 135, 405, format1);
 				}
@@ -180,7 +180,7 @@ namespace PracticeSem4 {
 				if (root->root->left->right)
 				{
 					String^ lastname = gcnew String(root->root->left->right->student.Get_lastname().c_str());
-					String^ avg = gcnew String(std::to_string(root->root->left->right->student.Get_avarage()).c_str());
+					String^ avg = gcnew String(root->root->left->right->student.Get_str_avarage().c_str());
 					formGraph->DrawString(lastname, font1, Brushes::Black, 425, 375, format1);
 					formGraph->DrawString(avg, font1, Brushes::Black, 425, 405, format1);
 				}
@@ -189,14 +189,14 @@ namespace PracticeSem4 {
 			if (root->root->right)
 			{
 				String^ lastname = gcnew String(root->root->right->student.Get_lastname().c_str());
-				String^ avg = gcnew String(std::to_string(root->root->right->student.Get_avarage()).c_str());
+				String^ avg = gcnew String(root->root->right->student.Get_str_avarage().c_str());
 				formGraph->DrawString(lastname, font1, Brushes::Black, 900, 215, format1);
 				formGraph->DrawString(avg, font1, Brushes::Black, 900, 245, format1);
 
 				if (root->root->right->left)
 				{
 					String^ lastname = gcnew String(root->root->right->left->student.Get_lastname().c_str());
-					String^ avg = gcnew String(std::to_string(root->root->right->left->student.Get_avarage()).c_str());
+					String^ avg = gcnew String(root->root->right->left->student.Get_str_avarage().c_str());
 					formGraph->DrawString(lastname, font1, Brushes::Black, 755, 375, format1);
 					formGraph->DrawString(avg, font1, Brushes::Black, 755, 405, format1);
 				}
@@ -204,7 +204,7 @@ namespace PracticeSem4 {
 				if (root->root->right->right)
 				{
 					String^ lastname = gcnew String(root->root->right->right->student.Get_lastname().c_str());
-					String^ avg = gcnew String(std::to_string(root->root->right->right->student.Get_avarage()).c_str());
+					String^ avg = gcnew String(root->root->right->right->student.Get_str_avarage().c_str());
 					formGraph->DrawString(lastname, font1, Brushes::Black, 1045, 375, format1);
 					formGraph->DrawString(avg, font1, Brushes::Black, 1045, 405, format1);
 				}
