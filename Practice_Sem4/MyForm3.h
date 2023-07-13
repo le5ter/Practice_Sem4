@@ -66,7 +66,7 @@ namespace PracticeSem4 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(500, 625);
+			this->button1->Location = System::Drawing::Point(500, 490);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(200, 70);
 			this->button1->TabIndex = 0;
@@ -79,20 +79,22 @@ namespace PracticeSem4 {
 			this->pictureBox1->Location = System::Drawing::Point(10, 10);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Padding = System::Windows::Forms::Padding(10, 10, 10, 0);
-			this->pictureBox1->Size = System::Drawing::Size(1180, 600);
+			this->pictureBox1->Size = System::Drawing::Size(1180, 475);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm3::pictureBox1_Paint);
 			// 
 			// MyForm3
 			// 
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->MaximizeBox = false;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1200, 700);
+			this->ClientSize = System::Drawing::Size(1200, 600);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm3";
-			this->Text = L"MyForm3";
+			this->Text = L"Бинарное дерево";
 			this->Load += gcnew System::EventHandler(this, &MyForm3::MyForm3_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -118,7 +120,7 @@ namespace PracticeSem4 {
 		pen = gcnew Pen(color, 5);
 		pen1 = gcnew Pen(color1, 2.5);
 
-		font1 = gcnew System::Drawing::Font(FontFamily::GenericSansSerif, 12.0F, FontStyle::Regular);
+		font1 = gcnew System::Drawing::Font(FontFamily::GenericSansSerif, 17.0F, FontStyle::Regular);
 		format1 = gcnew System::Drawing::StringFormat();
 		format1->LineAlignment = StringAlignment::Center;
 		format1->Alignment = StringAlignment::Center;

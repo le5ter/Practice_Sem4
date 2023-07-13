@@ -49,7 +49,7 @@ namespace PracticeSem4 {
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -64,9 +64,9 @@ namespace PracticeSem4 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(285, 347);
+			this->button1->Location = System::Drawing::Point(250, 490);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(161, 62);
+			this->button1->Size = System::Drawing::Size(200, 70);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Закрыть";
 			this->button1->UseVisualStyleBackColor = true;
@@ -75,28 +75,32 @@ namespace PracticeSem4 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(33, 18);
+			this->listBox1->Location = System::Drawing::Point(65, 65);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(608, 303);
+			this->listBox1->Size = System::Drawing::Size(570, 400);
 			this->listBox1->TabIndex = 1;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm4::listBox1_SelectedIndexChanged);
 			// 
 			// MyForm4
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(740, 452);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->MaximizeBox = false;
+			this->ClientSize = System::Drawing::Size(700, 600);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm4";
-			this->Text = L"MyForm4";
+			this->Text = L"Лучшие студенты";
 			this->Load += gcnew System::EventHandler(this, &MyForm4::MyForm4_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void MyForm4_Load(System::Object^ sender, System::EventArgs^ e) 
+	private:
+		System::Drawing::Font^ font;
+	private: System::Void MyForm4_Load(System::Object^ sender, System::EventArgs^ e)
 	{
+		font = gcnew System::Drawing::Font(FontFamily::GenericSansSerif, 25.0F, FontStyle::Regular);
+		listBox1->Font = font;
+
 		std::list<Student> students;
 		StreamReader^ sr = gcnew StreamReader("Data.txt");
 		String^ line;
@@ -115,9 +119,9 @@ namespace PracticeSem4 {
 		this->listBox1->Items->Clear();
 		auto it = students.begin();
 		double avg = it->Get_avarage();
-		for(auto it = students.begin(); it->Get_avarage() == avg; it++)
+		for (auto it = students.begin(); it->Get_avarage() == avg; it++)
 		{
-			std::string str = it->Get_lastname() + " " + std::to_string(it->Get_mark(0)) 
+			std::string str = it->Get_lastname() + " " + std::to_string(it->Get_mark(0))
 				+ " " + std::to_string(it->Get_mark(1)) + " " + std::to_string(it->Get_mark(2))
 				+ " " + std::to_string(it->Get_mark(3)) + " " + std::to_string(it->Get_mark(4));
 			String^ str1 = gcnew String(str.c_str());
@@ -126,11 +130,9 @@ namespace PracticeSem4 {
 		sr->Close();
 		delete sr;
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Close();
 	}
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	};
+};
 }

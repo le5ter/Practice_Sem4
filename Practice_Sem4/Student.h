@@ -38,7 +38,9 @@ public:
 	int Marks_sum();
 	std::string precision_2(float number)
 	{
-		int decimal_part = (number * 10) - ((int)number * 10);
+		int tmp = static_cast<int>(number);
+		int decimal_part = (number * 10.0 + 0.1) - (tmp * 10);
+		//decimal_part = (number * 10) - (tmp * 10);
 		return std::to_string((int)number) + "." + std::to_string(decimal_part);
 	}
 

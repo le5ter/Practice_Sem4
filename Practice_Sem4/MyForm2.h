@@ -64,9 +64,9 @@ namespace PracticeSem4 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(277, 428);
+			this->button1->Location = System::Drawing::Point(250, 490);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(208, 83);
+			this->button1->Size = System::Drawing::Size(200, 70);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Закрыть";
 			this->button1->UseVisualStyleBackColor = true;
@@ -75,28 +75,34 @@ namespace PracticeSem4 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(58, 25);
+			this->listBox1->Location = System::Drawing::Point(65, 65);
+			this->listBox1->Margin = System::Windows::Forms::Padding(0);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(623, 355);
+			this->listBox1->Size = System::Drawing::Size(570, 400);
 			this->listBox1->TabIndex = 1;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm2::listBox1_SelectedIndexChanged);
 			// 
 			// MyForm2
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(777, 536);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->MaximizeBox = false;
+			this->ClientSize = System::Drawing::Size(700, 600);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm2";
-			this->Text = L"MyForm2";
+			this->Text = L"Динамический список2";
 			this->Load += gcnew System::EventHandler(this, &MyForm2::MyForm2_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private:
+		System::Drawing::Font^ font;
 	private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
+		font = gcnew System::Drawing::Font(FontFamily::GenericSansSerif, 25.0F, FontStyle::Regular);
+		listBox1->Font = font;
+
 		std::list<Student> students;
 		StreamReader^ sr = gcnew StreamReader("Data.txt");
 		String^ line;

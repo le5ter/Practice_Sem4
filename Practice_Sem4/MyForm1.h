@@ -63,9 +63,9 @@ namespace PracticeSem4
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(272, 428);
+			this->button1->Location = System::Drawing::Point(250, 490);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(232, 93);
+			this->button1->Size = System::Drawing::Size(200, 70);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Закрыть";
 			this->button1->UseVisualStyleBackColor = true;
@@ -74,28 +74,33 @@ namespace PracticeSem4
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(62, 52);
+			this->listBox1->Location = System::Drawing::Point(65, 65);
+			this->listBox1->Margin = System::Windows::Forms::Padding(0);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(649, 303);
+			this->listBox1->Size = System::Drawing::Size(570, 400);
 			this->listBox1->TabIndex = 1;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
 			// 
 			// MyForm1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(788, 533);
+			this->ClientSize = System::Drawing::Size(700, 600);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->MaximizeBox = false;
 			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Text = L"Динамический список";
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private:
+		System::Drawing::Font^ font;
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
+		font = gcnew System::Drawing::Font(FontFamily::GenericSansSerif, 25.0F, FontStyle::Regular);
+		listBox1->Font = font;
+
 		std::list<Student> students;
 		StreamReader^ sr = gcnew StreamReader("Data.txt");
 		String^ line;
@@ -107,7 +112,7 @@ namespace PracticeSem4
 			std::stringstream ss(newline);
 			ss >> name >> lastname >> marks[0] >> marks[1] >> marks[2] >> marks[3] >> marks[4];
 			Student stud = Student(name, lastname, marks);
-			students.push_back(stud);
+			students.push_front(stud);
 		}
 		students.sort(Student::f1);
 
@@ -124,8 +129,6 @@ namespace PracticeSem4
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		this->Close();
-	}
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

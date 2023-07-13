@@ -30,6 +30,7 @@ Student::Student(std::string name, std::string lastname, int marks[5])
     }
     avg_marks = res / 5;
     str_avg_marks = precision_2(avg_marks);
+    //str_avg_marks = std::to_string(avg_marks);
 
 }
 
